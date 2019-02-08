@@ -89,29 +89,6 @@ class Fields
     public $PhoneOrEmail = "";
 
     /**
-     * @var uint8 Количество передается в тысячных долях
-     * @required
-     * например:
-     * 2.5 кг -> 2.5 * 1000 = 2500
-     * 42 шт. -> 42 * 1000 = 42000
-     * 500 табл. -> 500 * 1000 = 500000
-     * 0.5 упак. -> 0.5 * 1000 = 500
-     * 1 шт. -> 1 * 1000 = 1000
-     */
-    public $Qty = 0;
-    
-    /**
-     * @var Money Цена в копейках 
-     * @required
-     */
-    public $Price = 0;
-
-    /**
-     * @var uint8 Признак способа расчёта
-     */
-    public $PayAttribute = null;
-
-    /**
      * @var uint8 Тип чека
      * @required
      * 0 Приход | 1 Расход | 2 Возврат прихода | 3 Возврат расхода
@@ -141,7 +118,7 @@ class Fields
         $datas = array(
             "Device" => $this->Device,
             'RequestId' => $this->RequestId,
-            'DocumentType' => 0,
+            'DocumentType' => $this->DocumentType,
             "Lines" => $this->Lines,
             "NonCash" => array($this->NonCash),
             "TaxMode" => $this->TaxMode,
@@ -156,5 +133,23 @@ class Fields
      */
     public function addProductItem($item){
         $this->Lines[] = $item;
+    }
+
+    /**
+     * Корректное представление количества товара
+     * 
+     * @param integer $value - Количество товара. Должно быть в тысячных.
+     */
+    public function getCurrentQty($value){
+        return $value * 1000;
+    }
+
+    /**
+     * Корректное представление цены товара
+     * 
+     * @param integer $value - Количество товара. Должно быть в тысячных.
+     */
+    public function getCurrentPrice($value){
+        return $value * 100;
     }
 }
