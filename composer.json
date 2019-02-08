@@ -1,0 +1,20 @@
+{
+    "name": "bayzet/chekonline",
+    "description": "The package is a class for interacting with the API of the online checkout service of chekonline.ru",
+    "type": "library",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "homepage": "https://github.com/bayzet/chekonline",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Baizet Tlyupov",
+            "email": "baizet01@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=5.6"
+    }
+}
