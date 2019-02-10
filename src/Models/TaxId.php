@@ -1,6 +1,6 @@
 <?php
 
-namespace Bayzet\ChekOnline\Model;
+namespace ChekOnline\Model;
 
 /**
  * Налоги (Таблица 2)

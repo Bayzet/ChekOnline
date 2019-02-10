@@ -1,5 +1,5 @@
 <?php
-namespace Bayzet\ChekOnline\Base\Methods;
+namespace ChekOnline\Base\Methods;
 
 class ComplexMethod extends Method
 {

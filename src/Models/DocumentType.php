@@ -1,6 +1,6 @@
 <?php
 
-namespace Bayzet\ChekOnline\Model;
+namespace ChekOnline\Model;
 
 /**
  * Типы документов для команды «Открытие чека» (Таблица 1)

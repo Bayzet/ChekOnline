@@ -1,7 +1,7 @@
 <?php
-namespace Bayzet\ChekOnline;
+namespace ChekOnline;
 
-use Bayzet\ChekOnline\Methods\Complex;
+use ChekOnline\Methods\Complex;
 
 class Client
 {
