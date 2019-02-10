@@ -1,5 +1,7 @@
 <?php
-namespace ChekOnline\Base\Methods;
+namespace ChekOnline\Methods;
+
+use ChekOnline\Methods\Base\Method;
 
 class ComplexMethod extends Method
 {

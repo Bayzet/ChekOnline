@@ -1,6 +1,6 @@
 <?php
 
-namespace ChekOnline\Methods;
+namespace ChekOnline\Methods\Base;
 
 class Method extends AbstractMethod
 {
