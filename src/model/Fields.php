@@ -8,12 +8,12 @@ class Fields
      * @var string Идентификация устройства, обработавшего запрос
      * Всегда должно быть "auto"
      */
-    protected $Device = "auto";
+    const DEVICE = "auto";
 
     /**
      * @var string Уникальный идентификатор запроса
      */
-    protected $RequestId = uniqid();
+    const REQUEST_ID = uniqid();
 
     /**
      * @var array Массив товарных позиций
@@ -53,6 +53,7 @@ class Fields
      *      В этом поле можно указать режим агента, который будет
      *      распространён только на данный предмет расчёта. 
      */
+    // TODO: Сделать так, чтобы был не массив такой, а в сам метод addProductItem передавать эти свойства
     public $LineItem = [
         "Qty" => 0,
         "Price" => 0,
@@ -116,8 +117,8 @@ class Fields
      */
     public function getReadyData(){
         $datas = array(
-            "Device" => $this->Device,
-            'RequestId' => $this->RequestId,
+            "Device" => $this->DEVICE,
+            'RequestId' => $this->REQUEST_ID,
             'DocumentType' => $this->DocumentType,
             "Lines" => $this->Lines,
             "NonCash" => array($this->NonCash),
