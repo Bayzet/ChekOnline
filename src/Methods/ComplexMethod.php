@@ -1,7 +1,7 @@
 <?php
-namespace Bayzet\ChekOnline\Methods;
+namespace Bayzet\ChekOnline\Base\Methods;
 
-class Complex extends Method
+class ComplexMethod extends Method
 {
 
     /** @const string Метод API */
@@ -115,7 +115,7 @@ class Complex extends Method
             "Description"=> $description,
         ];
 
-        $this->addNonCash($price);
+        $this->incrementNonCash($price);
     }
 
     /**
@@ -141,7 +141,7 @@ class Complex extends Method
      * 
      * @param integer $value - цена товара добавляемы в чек
      */
-    public function addNonCash($value){
+    public function incrementNonCash($value){
         $this->NonCash += $value * 100;
     }
 }
