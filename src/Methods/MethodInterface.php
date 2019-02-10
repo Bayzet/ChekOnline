@@ -1,6 +1,6 @@
 <?php
 
-namespace Bayzet\ChekOnline\Methods;
+namespace ChekOnline\Methods;
 
 
 /**
