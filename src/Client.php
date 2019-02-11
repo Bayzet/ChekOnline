@@ -1,8 +1,9 @@
 <?php
 namespace ChekOnline;
 
-use ChekOnline\Methods\Complex;
 use Exception;
+use ChekOnline\Methods\Complex;
+use ChekOnline\Methods\Base\Method;
 
 class Client
 {
