@@ -37,8 +37,8 @@ class Client
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, $mydatas);
             curl_setopt($curl, CURLOPT_URL, $this->getUrl($datas::METHOD));
-            curl_setopt($curl,CURLOPT_SSLCERT, __DIR__ . '/' . $this->certificate); // Сертификат
-            curl_setopt($curl,CURLOPT_SSLKEY, __DIR__ . '/' . $this->privateKey); // Закрытый ключ
+            curl_setopt($curl,CURLOPT_SSLCERT, $this->certificate); // Сертификат
+            curl_setopt($curl,CURLOPT_SSLKEY, $this->privateKey); // Закрытый ключ
             
             $json_response = curl_exec($curl);
             
@@ -57,9 +57,9 @@ class Client
 
     public function getUrl($method){
         if($this->test_mode){
-            return $this->URL_TEST . $method;
+            return $this::URL_TEST . $method;
         }else{
-            return $this->URL . $method;
+            return $this::URL . $method;
         }
     } 
 }
