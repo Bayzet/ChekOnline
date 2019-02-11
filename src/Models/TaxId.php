@@ -1,6 +1,6 @@
 <?php
 
-namespace ChekOnline\Model;
+namespace ChekOnline\Models;
 
 /**
  * Налоги (Таблица 2)

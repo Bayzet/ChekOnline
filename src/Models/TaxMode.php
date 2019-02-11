@@ -1,6 +1,6 @@
 <?php
 
-namespace ChekOnline\Model;
+namespace ChekOnline\Models;
 
 /**
  * Тип системы налогообложения (Таблица 3)

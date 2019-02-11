@@ -1,6 +1,6 @@
 <?php
 
-namespace ChekOnline\Model;
+namespace ChekOnline\Models;
 
 /**
  * Class PayAttribute

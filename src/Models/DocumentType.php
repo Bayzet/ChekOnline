@@ -1,6 +1,6 @@
 <?php
 
-namespace ChekOnline\Model;
+namespace ChekOnline\Models;
 
 /**
  * Типы документов для команды «Открытие чека» (Таблица 1)
