@@ -2,6 +2,7 @@
 namespace ChekOnline;
 
 use ChekOnline\Methods\Complex;
+use Exception;
 
 class Client
 {
@@ -23,7 +24,7 @@ class Client
     {
         try{
             if(!($datas instanceof Method)){
-                throw new Exception("Параметр не является экземпляром класса 'Method'");
+                throw new \Exception("Параметр не является экземпляром класса 'Method'");
             }
 
             $mydatas = json_encode($datas->getReadyData());
@@ -47,7 +48,7 @@ class Client
     
             $response = json_decode($json_response, 1);
 
-            return ["status" => "success", "data" => $response];
+            return ["status" => "success", "data" => $response, "curl_http_code" => $status, "curl_error" => $lastError];
         }catch(Exception $e){
             return ["status" => "error", "data" => $e];
         }
