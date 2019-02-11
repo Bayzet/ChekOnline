@@ -61,7 +61,7 @@ class ComplexMethod extends Method
      */
     public function getReadyData(){
         $datas = array(
-            "Device" => $this->DEVICE,
+            "Device" => $this::DEVICE,
             'RequestId' => uniqid(),
             'DocumentType' => $this->DocumentType,
             "Lines" => $this->Lines,
