@@ -87,7 +87,6 @@ class ComplexMethod extends Method
      *      Если указано значение подытога по строке, то устройство произведёт расчёт цены,
      *      разделив значение этого поля на количество.
      * 
-     * – PayAttribute (uint8, тег 1214 ): Признак способа расчёта (см. табл. 4).
      *  
      * – LineAttribute (uint8, тег 1212 ): Признак предмета расчёта (см. табл. 6).
      *      При указании значений 15 или 16 поле Description должно содержать строки
@@ -99,18 +98,24 @@ class ComplexMethod extends Method
      * @param string $description - (string, обязательное, тег 1030 ): Наименование товарной позиции.
      *      Не может быть пустым.
      * 
+     * @param int $pay_attribute - (uint8, тег 1214 ): Признак способа расчёта (см. табл. 4).
+     *      
+     * 
      * – AgentModes (uint8, тег 1222 ): Признак агента по предмету расчёта (см. табл. 5).
      *      Обратите внимание, что данное поле является битовой маской.
      *      В этом поле можно указать режим агента, который будет
      *      распространён только на данный предмет расчёта. 
      */
-    public function addProductItem($qty, $price, $tax_id, $description = "Товар"){
-        $this->Lines[] = [
+    public function addProductItem($qty, $price, $tax_id, $description = "Товар", $pay_attribute = null){
+        $product = [
             "Qty" => $this->getCurrentQty($qty),
             "Price" => $this->getCurrentPrice($price),
+            "PayAttribute" => $pay_attribute,
             "TaxId" => $tax_id,
             "Description"=> $description,
         ];
+
+        $this->Lines[] = $product;
 
         $this->incrementNonCash($price);
     }
